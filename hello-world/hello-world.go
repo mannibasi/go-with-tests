@@ -1,12 +1,15 @@
 package hello
 
-const englishHelloPrefix = "Hello, "
-const spanishHelloPrefix = "Hola, "
-const spanish = "Spanish"
-const frenchHelloPrefix = "Bonjour, "
-const french = "French"
-const punjabiHelloPrefix = "Sat Sri Akal, "
-const punjabi = "Punjabi"
+const (
+	englishHelloPrefix = "Hello, "
+	frenchHelloPrefix  = "Bonjour, "
+	punjabiHelloPrefix = "Sat Sri Akal, "
+	spanishHelloPrefix = "Hola, "
+
+	french  = "French"
+	punjabi = "Punjabi"
+	spanish = "Spanish"
+)
 
 func HelloWorld(name string, language string) string {
 	if name == "" {

@@ -7,7 +7,7 @@ func HelloWorld(name string, language string) string {
 		name = "world"
 	}
 	if language == "Spanish" {
-		return "Hola, Fernando"
+		return "Hola, " + name
 	}
 	return englishHelloPrefix + name
 }

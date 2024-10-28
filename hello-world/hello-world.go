@@ -2,7 +2,7 @@ package hello
 
 const englishHelloPrefix = "Hello, "
 
-func HelloWorld(name string) string {
+func HelloWorld(name string, language string) string {
 	if name == "" {
 		name = "world"
 	}

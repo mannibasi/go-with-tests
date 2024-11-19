@@ -18,8 +18,7 @@ func TestWallet(t *testing.T) {
 	})
 
 	t.Run("test withdraw", func(t *testing.T) {
-		wallet := Wallet{}
-		wallet.Deposit(Bitcoin(10))
+		wallet := Wallet{balance: Bitcoin(10)}
 		wallet.Withdraw(Bitcoin(3))
 
 		got := wallet.Balance()

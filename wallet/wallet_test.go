@@ -5,6 +5,13 @@ import (
 )
 
 func TestWallet(t *testing.T) {
+	assertError := func(t testing.TB, err error) {
+		t.Helper()
+		if err == nil {
+			t.Error("wanted an error but didn't get one")
+		}
+	}
+
 	assertBalance := func(t testing.TB, wallet Wallet, want Bitcoin) {
 		t.Helper()
 		got := wallet.Balance()
@@ -31,11 +38,8 @@ func TestWallet(t *testing.T) {
 		wallet := Wallet{balance: startingBalance}
 		err := wallet.Withdraw(Bitcoin(23))
 
+		assertError(t, err)
 		assertBalance(t, wallet, startingBalance)
-
-		if err == nil {
-			t.Error("wanted an error but didn't get one")
-		}
 	})
 
 }
